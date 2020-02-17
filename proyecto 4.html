@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empresa de Seguros</title>
+</head>
+<body bgcolor="#00ff00">  
+   <script>
+var nombreCompleto = prompt("Por favor ingrese el nombre completo:\n Nombres y apellidos");
+var diaNacimiento = prompt("Ingrese dia y mes de nacimiento \n ejemplo: 4-5, 8-12..");
+var anos = prompt(`Ingrese cuantos años tiene\n Ejemplo: 18,25,36...`);
+var edadconyuge = prompt("Si tiene conyuge Ingrese la edad del conyuge\n si no escriba numero, 0 ");
+var cantidadHijos = prompt("Ingrese la cantidad de hijos menores de 21 años:\n Por favor ingrese únicamente números, maximo 6 hijos\n presione ENTER si no tiene");
+
+
+const precioBase = 250;
+var porcentaje1 = 0.01;
+var porcentaje2 = 0.02;
+var porcentaje3 = 0.05;
+var porcentaje4 = 0.08;
+var porcentaje5 = 0.12;
+var porcentaje6 = 0.03;
+var porcentaje7 = 0;
+
+
+if(anos <=17){
+    alert("no puedes asegurarte debes ser mayor de edad");
+}else if( anos >=18 && anos<21){
+    anos = precioBase * porcentaje7;
+    
+}else if(anos >=21 && anos<25){
+    anos = precioBase * porcentaje1;
+}else if(anos >=25 && anos<30){
+    anos = precioBase * porcentaje2;
+}else if(anos >=30 && anos<40){
+    anos = precioBase * porcentaje3;
+}else if(anos >=40 && anos<50){
+    anos = precioBase * porcentaje4;
+}else if(anos >=50 && anos<=65){
+    anos = precioBase * porcentaje5;
+}else if(anos >65){
+    anos = precioBase * porcentaje7;
+    alert("limite de edad no puede asegurarse");
+}
+    if(edadconyuge = 0){
+     edadconyuge = precioBase * porcentaje7;
+} else if(edadconyuge <30 && edadconyuge >=18 ){
+    edadconyuge = precioBase * porcentaje1;
+}else if(edadconyuge >=30 && edadconyuge <40){
+    edadconyuge = precioBase * porcentaje2;
+}else if(edadconyuge >=40 && edadconyuge <50){
+    edadconyuge = precioBase * porcentaje6;
+}else if(edadconyuge >=50 && edadconyuge <70){
+    edadconyuge = precioBase * porcentaje3;
+}if(cantidadHijos >= 1 || cantidadHijos <=6 ){
+    cantidadHijos = precioBase * porcentaje1 * cantidadHijos;
+
+}
+    
+
+
+
+recargos = anos + edadconyuge + cantidadHijos;
+comision = precioBase * 0.30;
+totalPagar = precioBase + comision + recargos;
+document.write("<h1>Bienvenido a Seguros TK-U</h1>");
+document.write("<h3>Muchas gracias " + nombreCompleto + " por preferirnos</h3>");
+document.write("<h3>sus recargos son: </h3>"  );
+document.write("<h3>recargo por edad: Q." + anos + ".</h3>");
+document.write("<h3>recargo por conyuge: Q." + edadconyuge + ".</h3>");
+document.write("<h3>recargo por hijos: Q." + cantidadHijos + ".</h3>");
+document.write("<h3>recargo fijo: Q.250.00</h3>")
+document.write("<h3>comision es: Q." + comision + ".</h3>")
+document.write("<h3>..........................................................</h3>");
+document.write("<h3>total a pagar: Q." + totalPagar + ".</h3>");
+
+
+   </script>
+
+
+
+
+
+    
+</body>
+</html>
